@@ -1,12 +1,17 @@
 # Siempre es recomendable explorar el dataset
 
-## Encabezado de dataset
+# Encabezado de dataset
 head(mtcars)
 
-## Estructura del dataset
+# Estructura del dataset
 
 str(mtcars)
 
-## Dimensiones de dataset
+# Dimensiones de dataset
 
 dim(mtcars)
+
+# Método tidyverse
+
+library(tidyverse)
+mtcars %>% glimpse

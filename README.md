@@ -4,8 +4,8 @@ Ejercicios de diferentes niveles para practicar la sintaxis del tidyverse y vari
 
 ## Básico
 
-- [Instalación, Uso y Primeros pasos](instalacion_uso.R)
-- [Exploracion dataset](exploracion_dataset.R)
+1. [Instalación, Uso y Primeros pasos](1-instalacion_uso.R)
+2. [Exploracion dataset](2-exploracion_dataset.R)
 
 
 
@@ -15,4 +15,6 @@ Ejercicios de diferentes niveles para practicar la sintaxis del tidyverse y vari
 
 Esta presentación esta hecha en R y puedes consultar su
 [código en github](https://github.com/AprendR/PresentacionesAprendR/blob/master/IntroduccionTidyverse.Rmd)
-[streaming relacionado](https://www.facebook.com/watch/?v=257281702254398)
+
+
+- [Streaming en Psycoding](https://www.facebook.com/watch/?v=257281702254398)
