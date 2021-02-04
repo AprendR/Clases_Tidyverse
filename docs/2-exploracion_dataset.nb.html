@@ -1759,11 +1759,13 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<div id="siempre-es-recomendable-explorar-el-dataset" class="section level1">
-<h1>Siempre es recomendable explorar el dataset</h1>
+<div id="exploración" class="section level1">
+<h1>Exploración</h1>
+<p>El primer paso que necesitamos seguir es explorar la estructura del dataset</p>
 </div>
 <div id="encabezado-de-dataset" class="section level1">
 <h1>Encabezado de dataset</h1>
+<p>Algunos conjuntos de datos pueden ser tan grandes que necesitamos revisar las primeras columnas</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChtdGNhcnMpXG5gYGAifQ== -->
@@ -1781,6 +1783,7 @@ summary {
 </div>
 <div id="estructura-del-dataset" class="section level1">
 <h1>Estructura del dataset</h1>
+<p>Podemos revisar la estructura del conjunto de datos para entender el tipo de variable que tenemos identificados.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKG10Y2FycylcbmBgYCJ9 -->
@@ -1802,9 +1805,7 @@ summary {
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
-<div id="dimensiones-de-dataset" class="section level1">
-<h1>Dimensiones de dataset</h1>
+<p>De ser necesario podemos consultar solo las dimensiones del dataset.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGltKG10Y2FycylcbmBgYCJ9 -->
@@ -1820,25 +1821,13 @@ summary {
 <h1>Método tidyverse</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
-<pre class="r"><code>library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4wIOKUgOKUgFxu4pyTIGdncGxvdDIgMy4zLjIgICAgIOKckyBwdXJyciAgIDAuMy40XG7inJMgdGliYmxlICAzLjAuNCAgICAg4pyTIGRwbHlyICAgMS4wLjJcbuKckyB0aWR5ciAgIDEuMS4yICAgICDinJMgc3RyaW5nciAxLjQuMFxu4pyTIHJlYWRyICAgMS40LjAgICAgIOKckyBmb3JjYXRzIDAuNS4wXG7ilIDilIAgQ29uZmxpY3RzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG54IGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbnggZHBseXI6OmxhZygpICAgIG1hc2tzIHN0YXRzOjpsYWcoKVxuIn0= -->
-<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
-  method         from
-  print.tbl_lazy     
-  print.tbl_sql      
-── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
-✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-✓ tibble  3.0.4     ✓ dplyr   1.0.2
-✓ tidyr   1.1.2     ✓ stringr 1.4.0
-✓ readr   1.4.0     ✓ forcats 0.5.0
-── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-x dplyr::filter() masks stats::filter()
-x dplyr::lag()    masks stats::lag()</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXRjYXJzICU+JSBnbGltcHNlXG5gYGAifQ== -->
-<pre class="r"><code>mtcars %&gt;% glimpse</code></pre>
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Usando <strong>tidyverse</strong> se puede realizar la misma tarea con la función <code>glimpse()</code></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXRjYXJzICU+JSBnbGltcHNlKClcbmBgYCJ9 -->
+<pre class="r"><code>mtcars %&gt;% glimpse()</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiUm93czogMzJcbkNvbHVtbnM6IDExXG4kIG1wZyAgPGRibD4gMjEuMCwgMjEuMCwgMjIuOCwgMjEuNCwgMTguNywgMTguMSwgMTQuMywgMjQuNCwgMjIuOCwgMTkuMiwgMTcuOCwgMTYuNCwgMTcuMywgMTUuMiwgMTAuNCwgMTAuNCwgMTQuNywgMzIuNCwgMzAuNCwgMzMuOSwgMjEuNSwgMeKAplxuJCBjeWwgIDxkYmw+IDYsIDYsIDQsIDYsIDgsIDYsIDgsIDQsIDQsIDYsIDYsIDgsIDgsIDgsIDgsIDgsIDgsIDQsIDQsIDQsIDQsIDgsIDgsIDgsIDgsIDQsIDQsIDQsIDgsIDYsIDgsIDRcbiQgZGlzcCA8ZGJsPiAxNjAuMCwgMTYwLjAsIDEwOC4wLCAyNTguMCwgMzYwLjAsIDIyNS4wLCAzNjAuMCwgMTQ2LjcsIDE0MC44LCAxNjcuNiwgMTY3LjYsIDI3NS44LCAyNzUuOCwgMjc1LjgsIDQ3Mi4wLCA0NjAuMCwgNDQwLjAsIDc4LjcsIDc14oCmXG4kIGhwICAgPGRibD4gMTEwLCAxMTAsIDkzLCAxMTAsIDE3NSwgMTA1LCAyNDUsIDYyLCA5NSwgMTIzLCAxMjMsIDE4MCwgMTgwLCAxODAsIDIwNSwgMjE1LCAyMzAsIDY2LCA1MiwgNjUsIDk3LCAxNTAsIDE1MCwgMjQ1LCAxNzUsIDY2LCA5MSwgMeKAplxuJCBkcmF0IDxkYmw+IDMuOTAsIDMuOTAsIDMuODUsIDMuMDgsIDMuMTUsIDIuNzYsIDMuMjEsIDMuNjksIDMuOTIsIDMuOTIsIDMuOTIsIDMuMDcsIDMuMDcsIDMuMDcsIDIuOTMsIDMuMDAsIDMuMjMsIDQuMDgsIDQuOTMsIDQuMjIsIDMuNzAsIDLigKZcbiQgd3QgICA8ZGJsPiAyLjYyMCwgMi44NzUsIDIuMzIwLCAzLjIxNSwgMy40NDAsIDMuNDYwLCAzLjU3MCwgMy4xOTAsIDMuMTUwLCAzLjQ0MCwgMy40NDAsIDQuMDcwLCAzLjczMCwgMy43ODAsIDUuMjUwLCA1LjQyNCwgNS4zNDUsIDIuMjAwLCAx4oCmXG4kIHFzZWMgPGRibD4gMTYuNDYsIDE3LjAyLCAxOC42MSwgMTkuNDQsIDE3LjAyLCAyMC4yMiwgMTUuODQsIDIwLjAwLCAyMi45MCwgMTguMzAsIDE4LjkwLCAxNy40MCwgMTcuNjAsIDE4LjAwLCAxNy45OCwgMTcuODIsIDE3LjQyLCAxOS40NywgMeKAplxuJCB2cyAgIDxkYmw+IDAsIDAsIDEsIDEsIDAsIDEsIDAsIDEsIDEsIDEsIDEsIDAsIDAsIDAsIDAsIDAsIDAsIDEsIDEsIDEsIDEsIDAsIDAsIDAsIDAsIDEsIDAsIDEsIDAsIDAsIDAsIDFcbiQgYW0gICA8ZGJsPiAxLCAxLCAxLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAxLCAxLCAxLCAwLCAwLCAwLCAwLCAwLCAxLCAxLCAxLCAxLCAxLCAxLCAxXG4kIGdlYXIgPGRibD4gNCwgNCwgNCwgMywgMywgMywgMywgNCwgNCwgNCwgNCwgMywgMywgMywgMywgMywgMywgNCwgNCwgNCwgMywgMywgMywgMywgMywgNCwgNSwgNSwgNSwgNSwgNSwgNFxuJCBjYXJiIDxkYmw+IDQsIDQsIDEsIDEsIDIsIDEsIDQsIDIsIDIsIDQsIDQsIDMsIDMsIDMsIDQsIDQsIDQsIDEsIDIsIDEsIDEsIDIsIDIsIDQsIDIsIDEsIDIsIDIsIDQsIDYsIDgsIDJcbiJ9 -->
 <pre><code>Rows: 32
@@ -1860,7 +1849,7 @@ $ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRXhwbG9yYWNpw7NuIERhdGFzZXQiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgU2llbXByZSBlcyByZWNvbWVuZGFibGUgZXhwbG9yYXIgZWwgZGF0YXNldAoKIyBFbmNhYmV6YWRvIGRlIGRhdGFzZXQKCmBgYHtyfQpoZWFkKG10Y2FycykKYGBgCgojIEVzdHJ1Y3R1cmEgZGVsIGRhdGFzZXQKCmBgYHtyfQpzdHIobXRjYXJzKQpgYGAKCiMgRGltZW5zaW9uZXMgZGUgZGF0YXNldAoKYGBge3J9CmRpbShtdGNhcnMpCmBgYAoKIyBNw6l0b2RvIHRpZHl2ZXJzZQoKYGBge3J9CmxpYnJhcnkodGlkeXZlcnNlKQoKbXRjYXJzICU+JSBnbGltcHNlCmBgYAoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRXhwbG9yYWNpw7NuIERhdGFzZXQiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgRXhwbG9yYWNpw7NuCgpFbCBwcmltZXIgcGFzbyBxdWUgbmVjZXNpdGFtb3Mgc2VndWlyIGVzIGV4cGxvcmFyIGxhIGVzdHJ1Y3R1cmEgZGVsIGRhdGFzZXQKCiMgRW5jYWJlemFkbyBkZSBkYXRhc2V0CgpBbGd1bm9zIGNvbmp1bnRvcyBkZSBkYXRvcyBwdWVkZW4gc2VyIHRhbiBncmFuZGVzIHF1ZSBuZWNlc2l0YW1vcyByZXZpc2FyIGxhcyBwcmltZXJhcyBjb2x1bW5hcwoKYGBge3J9CmhlYWQobXRjYXJzKQpgYGAKCiMgRXN0cnVjdHVyYSBkZWwgZGF0YXNldAoKUG9kZW1vcyByZXZpc2FyIGxhIGVzdHJ1Y3R1cmEgZGVsIGNvbmp1bnRvIGRlIGRhdG9zIHBhcmEgZW50ZW5kZXIgZWwgdGlwbyBkZSB2YXJpYWJsZSBxdWUgdGVuZW1vcyBpZGVudGlmaWNhZG9zLgoKYGBge3J9CnN0cihtdGNhcnMpCmBgYApEZSBzZXIgbmVjZXNhcmlvIHBvZGVtb3MgY29uc3VsdGFyIHNvbG8gbGFzIGRpbWVuc2lvbmVzIGRlbCBkYXRhc2V0LgoKYGBge3J9CmRpbShtdGNhcnMpCmBgYAoKIyBNw6l0b2RvIHRpZHl2ZXJzZQoKYGBge3IgZWNobz1GQUxTRX0KbGlicmFyeSh0aWR5dmVyc2UpCmBgYAoKVXNhbmRvICoqdGlkeXZlcnNlKiogc2UgcHVlZGUgcmVhbGl6YXIgbGEgbWlzbWEgdGFyZWEgY29uIGxhIGZ1bmNpw7NuIGBnbGltcHNlKClgCgpgYGB7cn0KbXRjYXJzICU+JSBnbGltcHNlKCkKYGBgCgoK</div>
 
 
 

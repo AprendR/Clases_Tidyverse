@@ -1,4 +1,4 @@
-# Siempre es recomendable explorar el dataset
+# El primer paso que necesitamos seguir es explorar la estructura del dataset
 
 # Encabezado de dataset
 head(mtcars)
@@ -14,4 +14,4 @@ dim(mtcars)
 # Método tidyverse
 
 library(tidyverse)
-mtcars %>% glimpse
+mtcars %>% glimpse()

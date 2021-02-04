@@ -5,13 +5,17 @@ output: html_notebook
 
 # Instalación de paqueterías
 
+La instalación es necesario solo hacerlo una vez.
+
 ```{r eval=FALSE}
-install.packages('tidyverse')
+# install.packages('tidyverse')
 ```
 
-
+> **Nota**: El código esta comentado para que no se ejecute
 
 # Cargar librería
+
+La carga de una librería se realiza al incio de la sesión, con lo que se coloca en la memoría RAM y puede ser usado
 
 ```{r}
 library(tidyverse)
@@ -19,27 +23,67 @@ library(tidyverse)
 
 # Creamos una vairable con una secuencia de números del 1 al 10
 
+- La instrucción `1:5` permite generar la secuencia _1, 2, 3, 4, 5._
+- La función `sum()` permite sumar los elementos
+
+Por lo si queremos sumar los números del 1 al 10
+
+```{r}
+sum(1:10)
+```
+
+La misma operación usado `%>%` (_pipe de maggrit_) que usa dplyr
+
 ```{r}
 1:10 %>% sum()
 ```
 
 # Calculamos la media de los números del 1 al 10
 
+- La función `mean()` calcula la media
+
+Método de **r base**
+
+```{r}
+mean(1:10)
+```
+
+Sintaxis dplyr:
+
 ```{r}
 1:10 %>% mean()
 ```
 
-
-
 # Redondeamos el número pi a 6 decimales
+
+### r base
+
+```{r}
+round(pi, 6)
+```
+
+### dplyr
 
 ```{r}
 pi %>% round(6)
 ```
 
-# Para hacer mas fácil la lectura y usar varios verbos podemos usar saltos de línea
+# Saltos de línea
+
+Para hacer mas fácil la lectura y usar varios verbos podemos usar saltos de línea después de cada pipe
 
 ```{r}
 pi %>%
   round(6)
 ```
+
+# Ventaja
+
+Se pueden ejecutar de forma encadenada
+
+```{r}
+1:10 %>% 
+  mean() %>% 
+  round()
+```
+

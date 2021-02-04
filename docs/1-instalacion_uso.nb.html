@@ -1761,16 +1761,21 @@ summary {
 <!-- rnb-text-begin -->
 <div id="instalación-de-paqueterías" class="section level1">
 <h1>Instalación de paqueterías</h1>
+<p>La instalación es necesario solo hacerlo una vez.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiaW5zdGFsbC5wYWNrYWdlcygndGlkeXZlcnNlJykifQ== -->
-<pre class="r"><code>install.packages(&#39;tidyverse&#39;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiIyBpbnN0YWxsLnBhY2thZ2VzKCd0aWR5dmVyc2UnKSJ9 -->
+<pre class="r"><code># install.packages(&#39;tidyverse&#39;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<blockquote>
+<p><strong>Nota</strong>: El código esta comentado para que no se ejecute</p>
+</blockquote>
 </div>
 <div id="cargar-librería" class="section level1">
 <h1>Cargar librería</h1>
+<p>La carga de una librería se realiza al incio de la sesión, con lo que se coloca en la memoría RAM y puede ser usado</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
@@ -1781,6 +1786,22 @@ summary {
 </div>
 <div id="creamos-una-vairable-con-una-secuencia-de-números-del-1-al-10" class="section level1">
 <h1>Creamos una vairable con una secuencia de números del 1 al 10</h1>
+<ul>
+<li>La instrucción <code>1:5</code> permite generar la secuencia <em>1, 2, 3, 4, 5.</em></li>
+<li>La función <code>sum()</code> permite sumar los elementos</li>
+</ul>
+<p>Por lo si queremos sumar los números del 1 al 10</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtKDE6MTApXG5gYGAifQ== -->
+<pre class="r"><code>sum(1:10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDU1XG4ifQ== -->
+<pre><code>[1] 55</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>La misma operación usado <code>%&gt;%</code> (<em>pipe de maggrit</em>) que usa dplyr</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMToxMCAlPiUgc3VtKClcbmBgYCJ9 -->
@@ -1794,6 +1815,18 @@ summary {
 </div>
 <div id="calculamos-la-media-de-los-números-del-1-al-10" class="section level1">
 <h1>Calculamos la media de los números del 1 al 10</h1>
+<ul>
+<li>La función <code>mean()</code> calcula la media</li>
+</ul>
+<p>Método de <strong>r base</strong></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWVhbigxOjEwKVxuYGBgIn0= -->
+<pre class="r"><code>mean(1:10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Sintaxis dplyr:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMToxMCAlPiUgbWVhbigpXG5gYGAifQ== -->
@@ -1807,6 +1840,21 @@ summary {
 </div>
 <div id="redondeamos-el-número-pi-a-6-decimales" class="section level1">
 <h1>Redondeamos el número pi a 6 decimales</h1>
+<div id="r-base" class="section level3">
+<h3>r base</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm91bmQocGksIDYpXG5gYGAifQ== -->
+<pre class="r"><code>round(pi, 6)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMuMTQxNTkzXG4ifQ== -->
+<pre><code>[1] 3.141593</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="dplyr" class="section level3">
+<h3>dplyr</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGkgJT4lIHJvdW5kKDYpXG5gYGAifQ== -->
@@ -1818,8 +1866,10 @@ summary {
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="para-hacer-mas-fácil-la-lectura-y-usar-varios-verbos-podemos-usar-saltos-de-línea" class="section level1">
-<h1>Para hacer mas fácil la lectura y usar varios verbos podemos usar saltos de línea</h1>
+</div>
+<div id="saltos-de-línea" class="section level1">
+<h1>Saltos de línea</h1>
+<p>Para hacer mas fácil la lectura y usar varios verbos podemos usar saltos de línea después de cada pipe</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGkgJT4lXG4gIHJvdW5kKDYpXG5gYGAifQ== -->
@@ -1830,9 +1880,28 @@ summary {
 <pre><code>[1] 3.141593</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="ventaja" class="section level1">
+<h1>Ventaja</h1>
+<p>Se pueden ejecutar de forma encadenada</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMToxMCAlPiUgXG4gIG1lYW4oKSAlPiUgXG4gIHJvdW5kKClcblxuYGBgIn0= -->
+<pre class="r"><code>1:10 %&gt;% 
+  mean() %&gt;% 
+  round()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDZcbiJ9 -->
+<pre><code>[1] 6</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSW5zdGFsYWNpw7NuIHkgdXNvIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIEluc3RhbGFjacOzbiBkZSBwYXF1ZXRlcsOtYXMKCmBgYHtyIGV2YWw9RkFMU0V9Cmluc3RhbGwucGFja2FnZXMoJ3RpZHl2ZXJzZScpCmBgYAoKCgojIENhcmdhciBsaWJyZXLDrWEKCmBgYHtyfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgojIENyZWFtb3MgdW5hIHZhaXJhYmxlIGNvbiB1bmEgc2VjdWVuY2lhIGRlIG7Dum1lcm9zIGRlbCAxIGFsIDEwCgpgYGB7cn0KMToxMCAlPiUgc3VtKCkKYGBgCgojIENhbGN1bGFtb3MgbGEgbWVkaWEgZGUgbG9zIG7Dum1lcm9zIGRlbCAxIGFsIDEwCgpgYGB7cn0KMToxMCAlPiUgbWVhbigpCmBgYAoKCgojIFJlZG9uZGVhbW9zIGVsIG7Dum1lcm8gcGkgYSA2IGRlY2ltYWxlcwoKYGBge3J9CnBpICU+JSByb3VuZCg2KQpgYGAKCiMgUGFyYSBoYWNlciBtYXMgZsOhY2lsIGxhIGxlY3R1cmEgeSB1c2FyIHZhcmlvcyB2ZXJib3MgcG9kZW1vcyB1c2FyIHNhbHRvcyBkZSBsw61uZWEKCmBgYHtyfQpwaSAlPiUKICByb3VuZCg2KQpgYGAK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSW5zdGFsYWNpw7NuIHkgdXNvIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIEluc3RhbGFjacOzbiBkZSBwYXF1ZXRlcsOtYXMKCkxhIGluc3RhbGFjacOzbiBlcyBuZWNlc2FyaW8gc29sbyBoYWNlcmxvIHVuYSB2ZXouCgpgYGB7ciBldmFsPUZBTFNFfQojIGluc3RhbGwucGFja2FnZXMoJ3RpZHl2ZXJzZScpCmBgYAoKPiAqKk5vdGEqKjogRWwgY8OzZGlnbyBlc3RhIGNvbWVudGFkbyBwYXJhIHF1ZSBubyBzZSBlamVjdXRlCgojIENhcmdhciBsaWJyZXLDrWEKCkxhIGNhcmdhIGRlIHVuYSBsaWJyZXLDrWEgc2UgcmVhbGl6YSBhbCBpbmNpbyBkZSBsYSBzZXNpw7NuLCBjb24gbG8gcXVlIHNlIGNvbG9jYSBlbiBsYSBtZW1vcsOtYSBSQU0geSBwdWVkZSBzZXIgdXNhZG8KCmBgYHtyfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgojIENyZWFtb3MgdW5hIHZhaXJhYmxlIGNvbiB1bmEgc2VjdWVuY2lhIGRlIG7Dum1lcm9zIGRlbCAxIGFsIDEwCgotIExhIGluc3RydWNjacOzbiBgMTo1YCBwZXJtaXRlIGdlbmVyYXIgbGEgc2VjdWVuY2lhIF8xLCAyLCAzLCA0LCA1Ll8KLSBMYSBmdW5jacOzbiBgc3VtKClgIHBlcm1pdGUgc3VtYXIgbG9zIGVsZW1lbnRvcwoKUG9yIGxvIHNpIHF1ZXJlbW9zIHN1bWFyIGxvcyBuw7ptZXJvcyBkZWwgMSBhbCAxMAoKYGBge3J9CnN1bSgxOjEwKQpgYGAKCkxhIG1pc21hIG9wZXJhY2nDs24gdXNhZG8gYCU+JWAgKF9waXBlIGRlIG1hZ2dyaXRfKSBxdWUgdXNhIGRwbHlyCgpgYGB7cn0KMToxMCAlPiUgc3VtKCkKYGBgCgojIENhbGN1bGFtb3MgbGEgbWVkaWEgZGUgbG9zIG7Dum1lcm9zIGRlbCAxIGFsIDEwCgotIExhIGZ1bmNpw7NuIGBtZWFuKClgIGNhbGN1bGEgbGEgbWVkaWEKCk3DqXRvZG8gZGUgKipyIGJhc2UqKgoKYGBge3J9Cm1lYW4oMToxMCkKYGBgCgpTaW50YXhpcyBkcGx5cjoKCmBgYHtyfQoxOjEwICU+JSBtZWFuKCkKYGBgCgojIFJlZG9uZGVhbW9zIGVsIG7Dum1lcm8gcGkgYSA2IGRlY2ltYWxlcwoKIyMjIHIgYmFzZQoKYGBge3J9CnJvdW5kKHBpLCA2KQpgYGAKCiMjIyBkcGx5cgoKYGBge3J9CnBpICU+JSByb3VuZCg2KQpgYGAKCiMgU2FsdG9zIGRlIGzDrW5lYQoKUGFyYSBoYWNlciBtYXMgZsOhY2lsIGxhIGxlY3R1cmEgeSB1c2FyIHZhcmlvcyB2ZXJib3MgcG9kZW1vcyB1c2FyIHNhbHRvcyBkZSBsw61uZWEgZGVzcHXDqXMgZGUgY2FkYSBwaXBlCgpgYGB7cn0KcGkgJT4lCiAgcm91bmQoNikKYGBgCgojIFZlbnRhamEKClNlIHB1ZWRlbiBlamVjdXRhciBkZSBmb3JtYSBlbmNhZGVuYWRhCgpgYGB7cn0KMToxMCAlPiUgCiAgbWVhbigpICU+JSAKICByb3VuZCgpCmBgYAoK</div>
 
 
 

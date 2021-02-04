@@ -3,9 +3,13 @@ title: "Exploración Dataset"
 output: html_notebook
 ---
 
-# Siempre es recomendable explorar el dataset
+# Exploración
+
+El primer paso que necesitamos seguir es explorar la estructura del dataset
 
 # Encabezado de dataset
+
+Algunos conjuntos de datos pueden ser tan grandes que necesitamos revisar las primeras columnas
 
 ```{r}
 head(mtcars)
@@ -13,11 +17,12 @@ head(mtcars)
 
 # Estructura del dataset
 
+Podemos revisar la estructura del conjunto de datos para entender el tipo de variable que tenemos identificados.
+
 ```{r}
 str(mtcars)
 ```
-
-# Dimensiones de dataset
+De ser necesario podemos consultar solo las dimensiones del dataset.
 
 ```{r}
 dim(mtcars)
@@ -25,10 +30,14 @@ dim(mtcars)
 
 # Método tidyverse
 
-```{r}
+```{r echo=FALSE}
 library(tidyverse)
+```
 
-mtcars %>% glimpse
+Usando **tidyverse** se puede realizar la misma tarea con la función `glimpse()`
+
+```{r}
+mtcars %>% glimpse()
 ```
 
 
