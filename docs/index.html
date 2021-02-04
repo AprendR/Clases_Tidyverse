@@ -3343,7 +3343,21 @@ select(situacion_laboral_madre, Año, Estudiante)</pre>
 <pre >## # A tibble: 1 x 3
 ##   año_entero Estudiante  Otra
 ##        &lt;int&gt;      &lt;dbl&gt; &lt;dbl&gt;
-## 1       2013       7.70  15.7</pre></article></slide>
+## 1       2013       7.70  15.7</pre>
+
+</article></slide><slide class=""><hgroup><h2>dplyr </h2><h3> Comando <code>summarise()</code></h3></hgroup><article  id="dplyr-comando-summarise">
+
+<p>Este comando permite reducir una columna a un valor con base en la función que nosotros usemos.</p>
+
+<pre class = 'prettyprint lang-r'>situacion_laboral_madre %&gt;%
+  mutate(año_entero = as.integer(substr(Año, 1, 4))) %&gt;% 
+  select(año_entero, Estudiante) %&gt;% 
+  summarise(sum_estudiante = sum(Estudiante))</pre>
+
+<pre >## # A tibble: 1 x 1
+##   sum_estudiante
+##            &lt;dbl&gt;
+## 1           99.8</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

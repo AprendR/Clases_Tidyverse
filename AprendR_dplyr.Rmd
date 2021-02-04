@@ -91,4 +91,24 @@ situacion_laboral_madre %>%
   select(año_entero, Estudiante, Otra)
 ```
 
+## dplyr | Comando `summarise()`
 
+Este comando permite reducir una columna a un valor con base en la función que nosotros usemos.
+
+```{r echo=TRUE}
+situacion_laboral_madre %>%
+  mutate(año_entero = as.integer(substr(Año, 1, 4))) %>% 
+  select(año_entero, Estudiante) %>% 
+  summarise(sum_estudiante = sum(Estudiante))
+```
+
+## dplyr | Cálculos agregados `group_by()`
+
+Para realizar cálculos agrupados por el año
+
+```{r echo=TRUE}
+nacimiento_general %>%
+  select(Entidad, `Nacimientos_10-14`) %>% 
+  group_by(Entidad) %>% 
+  summarise(nacimientos_10_14 = sum(`Nacimientos_10-14`))
+```
