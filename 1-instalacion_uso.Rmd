@@ -1,0 +1,45 @@
+---
+title: "Instalación y uso"
+output: html_notebook
+---
+
+# Instalación de paqueterías
+
+```{r eval=FALSE}
+install.packages('tidyverse')
+```
+
+
+
+# Cargar librería
+
+```{r}
+library(tidyverse)
+```
+
+# Creamos una vairable con una secuencia de números del 1 al 10
+
+```{r}
+1:10 %>% sum()
+```
+
+# Calculamos la media de los números del 1 al 10
+
+```{r}
+1:10 %>% mean()
+```
+
+
+
+# Redondeamos el número pi a 6 decimales
+
+```{r}
+pi %>% round(6)
+```
+
+# Para hacer mas fácil la lectura y usar varios verbos podemos usar saltos de línea
+
+```{r}
+pi %>%
+  round(6)
+```

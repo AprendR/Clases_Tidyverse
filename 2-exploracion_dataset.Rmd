@@ -1,0 +1,34 @@
+---
+title: "Exploración Dataset"
+output: html_notebook
+---
+
+# Siempre es recomendable explorar el dataset
+
+# Encabezado de dataset
+
+```{r}
+head(mtcars)
+```
+
+# Estructura del dataset
+
+```{r}
+str(mtcars)
+```
+
+# Dimensiones de dataset
+
+```{r}
+dim(mtcars)
+```
+
+# Método tidyverse
+
+```{r}
+library(tidyverse)
+
+mtcars %>% glimpse
+```
+
+
