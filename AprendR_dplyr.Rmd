@@ -1,0 +1,94 @@
+---
+title: "dplyr"
+date: '`r format(Sys.Date(), "%d de %B del %Y")`'
+output: 
+  ioslides_presentation:
+    widescreen: true
+    css: media/custom.css
+    includes:
+      in_header: media/in_header.html
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs", output_file = 'index.html') })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## dplyr | Gramática de manejo de datos
+
+Este paquete permite el manejo de datos usando una gramática con verbos consistentes y que permiten resolver
+de forma clara y concisa casi cualquier procesamiento de datos.
+
+Entre algunas de sus ventajas tenemos:
+
+- Sintaxis interpretable
+- Es extensible para usar con **bases de datos**, **spark** o **data.table**
+- Compatible con el resto de paquetes que forman parte de **tidyverse**<footnote>Es una colección de paquetes que permiten el manejo de datos manteniendo un gramática en común </footnote>
+
+## dplyr | Verbos Básicos
+
+| Comando    | ¿Que hace?                                |
+|:----------:|:------------------------------------------|
+|filter()    | Filtra los renglones con base en valores |
+|select()    | Selecciona columnas por nombre o posición |
+|mutate()    | Agrega nuevas variables                   |
+|arrange()   | Ordena el dataset con base en un factor   |
+|summarise() | Calcula calculos agrupados                 |
+
+
+## dplyr | Verbos Básicos versión gráfica {.flexbox .vcenter}
+
+![](media/vaudor_dplyr_schema.png)
+
+## dplyr | ¿Como se usan? {.flexbox .vcenter}
+
+![](media/dplyrverb_structure.png)
+
+## dplyr | Ejemplo de uso I
+
+```{r message=FALSE, warning=FALSE, echo=TRUE}
+library(curso.feminismo.datos)
+library(dplyr)
+select(situacion_laboral_madre, Año, Estudiante)
+```
+
+## dplyr | Ejemplo de uso II
+
+```{r echo=TRUE}
+filter(situacion_laboral_madre, Año == "2013*")
+```
+
+## dplyr | Ejemplo III
+
+```{r echo=TRUE}
+mutate(nacimiento_lugar_residencia, año_entero = as.integer(substr(Año, 1, 4)))
+```
+
+## dplyr | Pipe
+
+Una característica que se distintiva de esta gramática de procesamiento de datos es el uso de una **pipe** que se 
+define como el símbolo `%>%`.
+
+Este símbolo permite encadenar varias instrucciones o verbos que se ejecutaran uno tras otro. 
+
+En este encadenamiento se puede obviar el paso del **data.frame** que se esta procesando, considerandolo como
+el primer argumento de cada verbo.
+
+![](media/dplyrpipe.png){#show-logo}
+
+
+## dplyr | Encadenando comandos
+
+Una de las ventajas de esta gramática es que estos comandos se pueden usar de forma encadenada uno tras el otro.
+
+Esto se puede hacer mediante el operador pipe
+
+```{r echo=TRUE}
+situacion_laboral_madre %>%
+  filter(Año == "2013*") %>% 
+  mutate(año_entero = as.integer(substr(Año, 1, 4))) %>% 
+  select(año_entero, Estudiante, Otra)
+```
+
+
